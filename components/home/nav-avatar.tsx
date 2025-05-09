@@ -32,6 +32,5 @@ export const NavAvatar = (
                 </AvatarFallback>
             </Avatar>
         </NavDropdown>
-       
     )
 }
