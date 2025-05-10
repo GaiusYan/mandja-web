@@ -14,7 +14,8 @@ import { carouselData } from "@/data/data"
 export const MainCarousel = () => {
     return (
         <div className="relative bg-gradient-to-r from-purple-100 to-indigo-100 text-white w-full">
-            <Carousel className="container mx-auto max-w-7xl">
+            <Carousel 
+                className="container mx-auto max-w-7xl">
                 <CarouselContent>
                     {carouselData.map((carousel,index) => (
                         <CarouselItem key={index}>
