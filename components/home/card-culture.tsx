@@ -4,16 +4,12 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
  } from "@/components/ui/card"
+import { cn } from "@/lib/utils";
 
 
-
-interface CardCultureProps  {
-    children: React.ReactNode;
-}
 
 
 export const CardCulture = (
@@ -22,17 +18,39 @@ export const CardCulture = (
     icon,
     color,
     description,
+    buttonUrl,
+    buttonLabel,
     }: CardCarouselProps, 
-    children: CardCultureProps
 ) => {
 
     return (
         <Card>
             <CardHeader>
                 <CardTitle className="text-2xl">
-                    {icon}
+                    <div className=
+                        {cn(
+                            "flex items-center justify-center p-4 mb-4 rounded-full w-16 h-16 text-white",
+                            color
+                        )}>
+                        {icon && React.createElement(icon)}
+                    </div>
                 </CardTitle>
+                <CardDescription>
+                    <h3 className="text-xl font-semibold mb-2">
+                        {name}
+                    </h3>
+                </CardDescription>
             </CardHeader>
+            <CardContent>
+                <p className="text-gray-600">
+                    {description}
+                </p>
+            </CardContent>
+            <div className="">
+                <a href={buttonUrl}>
+                    {buttonLabel}
+                </a>
+            </div>
         </Card>
     )
 }

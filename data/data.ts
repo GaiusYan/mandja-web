@@ -32,6 +32,8 @@ export interface CardCarouselProps {
     icon: ForwardRefExoticComponent<Omit<LucideProps, "ref">> &  RefAttributes<SVGSVGElement>,
     color: string,
     description: string;
+    buttonUrl?: string,
+    buttonLabel?: string,
 }
 
 export const cultureCategorie : CardCarouselProps[] = [
