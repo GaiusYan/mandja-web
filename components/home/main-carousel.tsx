@@ -18,7 +18,7 @@ export const MainCarousel = () => {
                 <CarouselContent>
                     {carouselData.map((carousel,index) => (
                         <CarouselItem key={index}>
-                            <div className="relative h-[400px] w-full p-1">
+                            <div className="relative h-[400px] w-full">
                                <CardCarousel 
                                     url={carousel.url}
                                     description={carousel.description}
