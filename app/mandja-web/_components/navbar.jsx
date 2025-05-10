@@ -52,7 +52,6 @@ const  Navbar = () => {
                     Se connecter
                 </Button>
             }
-             
           </div>
         </div>
     </div>

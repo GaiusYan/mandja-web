@@ -52,12 +52,16 @@ export const NavNavigationMenu = () => {
                 <MenubarContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                         {components.map((component) => 
-                        <li key={component.title} title={component.title}>
-                            <a href={component.href}>
-                                <span className={clsx(inter.className,"text-sm")}>
+                        <li key={component.title} title={component.title} 
+                            className="hover:bg-purple-50 rounded-md p-1">
+                            <a href={component.href} >
+                                <span
+                                    className={clsx(
+                                        inter.className,
+                                        "text-sm font-bold")}>
                                     {component.title}
                                 </span> 
-                                <p>
+                                <p className="text-sm text-gray-500">
                                     {component.description}
                                 </p>
                             </a>
@@ -69,10 +73,11 @@ export const NavNavigationMenu = () => {
 
         <ul className="hidden md:flex items-center gap-5">
             {components.map((component) => 
-                <li key={component.title} title={component.title}>
+                <li key={component.title} title={component.description} className="hover:bg-purple-50 rounded-md p-1">
                     <a href={component.href}>
                         <span 
-                            className={clsx(inter.className,"text-sm")}>                                    {component.title}
+                            className={clsx(inter.className,"text-sm")}>                                    
+                            {component.title}
                         </span>  
                     </a>
                 </li>)}
