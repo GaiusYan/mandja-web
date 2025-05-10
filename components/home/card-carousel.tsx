@@ -9,7 +9,6 @@ interface CardCarouselProps {
     url: string, 
     title: string,
     description: string,
-    hrefButton?: string,
     children: React.ReactNode,
 }    
 
@@ -17,7 +16,6 @@ export const CardCarousel = ({
     url, 
     title,
     description,
-    hrefButton,
     children
     }: CardCarouselProps) => {
 
