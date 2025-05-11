@@ -6,8 +6,10 @@ import {
     CardDescription,
     CardHeader,
     CardTitle,
+    CardFooter,
  } from "@/components/ui/card"
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 
 
@@ -46,11 +48,13 @@ export const CardCulture = (
                     {description}
                 </p>
             </CardContent>
-            <div className="">
-                <a href={buttonUrl}>
-                    {buttonLabel}
-                </a>
-            </div>
+            <CardFooter className="flex justify-start">
+                <Button variant={"outline"}>
+                   <a href={buttonUrl}>
+                    {buttonLabel} 
+                   </a>
+                </Button>
+            </CardFooter>
         </Card>
     )
 }
