@@ -3,6 +3,21 @@ import {
     CardContent } 
     from "@/components/ui/card";
 import { Button } from "../ui/button";
+import { Poppins, JetBrains_Mono } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const poppins = Poppins({
+    subsets: ['latin'],
+    weight: ['400', '800'],
+    display: 'swap',
+})
+
+const jetBrains_Mono = JetBrains_Mono({
+    subsets: ['latin'],
+    weight: ['400', '800'],
+    display: 'swap',
+})
+
 
 
 interface CardCarouselProps {
@@ -35,8 +50,9 @@ export const CardCarousel = ({
                             justify-center
                             items-center h-full text-white">
                             <div className="">
-                                <h1 className="text-5xl font-bold mb-2">{title}</h1>
-                                <div>{description}</div>
+                                <h1 className=
+                                {cn("text-5xl font-bold mb-2",poppins)} >{title}</h1>
+                                <div className={cn(jetBrains_Mono)}>{description}</div>
                                 <Button  
                                     className="mt-4 cursor-pointer font-semibold">
                                     Découvrir

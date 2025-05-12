@@ -49,7 +49,11 @@ const  Navbar = () => {
         <div className='flex flex-row gap-1 items-center'>
           <p className=
             {cn(roboto.className,
-            " flex items-center text-xl text-[#7E69AB] font-extrabold")}>Mandja-web</p>
+            " flex items-center text-xl text-[#7E69AB] font-extrabold")}>
+              <Link href={"/"}>
+                Mandja-web
+              </Link>
+              </p>
         </div>
         <div className='flex flex-row items-center'>
           <NavNavigationMenu/>
