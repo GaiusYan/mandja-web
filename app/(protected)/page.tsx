@@ -5,10 +5,9 @@ import { MainCarousel } from "@/components/home/main-carousel";
 import Navbar from "../mandja-web/_components/navbar";
 
 
-
 const HomePage = () => {
     return (
-        <>
+        <> 
             <Navbar/>
             <div className="flex flex-col items-center bg-gray-50 h-full">
                 <MainCarousel />

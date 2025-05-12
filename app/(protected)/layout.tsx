@@ -1,18 +1,19 @@
-import React from 'react'
 
-interface ProtectedLayoutProps {
-    children : React.ReactNode,
+
+
+interface HomeLayoutProps {
+    children: React.ReactNode
 }
 
-
-const ProtectedLayout  = ({children}: ProtectedLayoutProps) => {
-  return (
-    <>
-        <div className='pt-19'>
-            {children}
-        </div>
-    </>
-  )
+export const HomeLayout = ({
+    children 
+} : HomeLayoutProps) => {
+    return (
+        <>
+            
+            <div>
+                {children}
+            </div>
+        </>
+    )
 }
-
-export default ProtectedLayout;

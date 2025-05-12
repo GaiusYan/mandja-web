@@ -1,7 +1,7 @@
 
 "use client";
-import clsx from 'clsx';
-import { Inter, Poppins, Roboto } from 'next/font/google';
+
+import {  Roboto } from 'next/font/google';
 import { useState } from 'react';
 import {NavAvatar} from '@/components/home/nav-avatar';
 import { Button } from '@/components/ui/button';
@@ -16,12 +16,7 @@ const roboto = Roboto({
   display: 'swap',
 }); 
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-inter',
-  display: 'swap',
-})
+
 
 import { cn } from '@/lib/utils';
 
@@ -30,8 +25,14 @@ import { cn } from '@/lib/utils';
  
 const  Navbar = () => {
   
-  const [isConnected, setIsConnected] = useState(true);
+  const [isConnected, setIsConnected] = useState<boolean>(true);
   
+  const onClick = () : void => {
+    if (true){
+      setIsConnected(false);
+    }
+    setIsConnected(true)
+  }
   return (
     <div className="p-5
       flex
@@ -49,8 +50,9 @@ const  Navbar = () => {
               isConnected ? 
               <NavAvatar 
                 src={""}
-                alt={"GY"}/> : 
+                alt={"GY"} onClick={onClick}/> : 
               <Button 
+                onClick={onClick}
                 variant={"default"}
                 value={"Se connecter"}>
                   <LogInIcon 
