@@ -23,27 +23,33 @@ const inter = Inter({
   display: 'swap',
 })
 
+import { cn } from '@/lib/utils';
+
 
 
  
 const  Navbar = () => {
   
-  const [isConnected, setIsConnected] = useState(false);
+  const [isConnected, setIsConnected] = useState(true);
   
   return (
     <div className="p-5
       flex
       justify-between
       items-center bg-white shadow-md fixed top-0 left-0 right-0 z-10">
-        <p className={clsx(roboto.className,"text-2xl text-[#7E69AB] font-extrabold")}>Mandja-web</p>
-        <div className='flex flex-row gap-10 items-center'>
+        <div className='flex flex-row gap-1 items-center'>
+          <p className=
+            {cn(roboto.className,
+            " flex items-center text-xl text-[#7E69AB] font-extrabold")}>Mandja-web</p>
+        </div>
+        <div className='flex flex-row items-center'>
           <NavNavigationMenu/>
           <div>
             {
               isConnected ? 
               <NavAvatar 
-              src={""}
-              alt={"GY"}/> : 
+                src={""}
+                alt={"GY"}/> : 
               <Button 
                 variant={"default"}
                 value={"Se connecter"}>

@@ -6,6 +6,10 @@ import Navbar from "@/app/mandja-web/_components/navbar";
 export const metadata: Metadata = {
   title: "Mandja Web",
   description: "Application culturelle de Mandja",
+  icons: {
+    icon: "/mandja-web.png",
+    shortcut: "/mandja-web.png",
+  }
 };
 
 export default function RootLayout({
@@ -16,7 +20,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        
       >
         <Navbar />
         <main className="pt-19">

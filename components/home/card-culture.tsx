@@ -10,8 +10,7 @@ import {
  } from "@/components/ui/card"
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-
-
+import Link from "next/link";
 
 
 export const CardCulture = (
@@ -38,7 +37,7 @@ export const CardCulture = (
                     </div>
                 </CardTitle>
                 <CardDescription>
-                    <h3 className="text-xl font-semibold mb-2">
+                    <h3 className="text-xl font-bold mb-2">
                         {name}
                     </h3>
                 </CardDescription>
@@ -49,11 +48,13 @@ export const CardCulture = (
                 </p>
             </CardContent>
             <CardFooter className="flex justify-start">
-                <Button variant={"outline"}>
-                   <a href={buttonUrl}>
-                    {buttonLabel} 
-                   </a>
-                </Button>
+                   <Link href={buttonUrl ? buttonUrl : "#"}>
+                        <Button
+                        className="cursor-pointer"
+                        variant={"outline"}>
+                            {buttonLabel} 
+                        </Button>
+                   </Link>
             </CardFooter>
         </Card>
     )

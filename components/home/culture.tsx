@@ -1,5 +1,5 @@
 import { MainComponent } from "@/components/home/main-component"
-import { CardCulture } from "./card-culture"
+import { CardCulture } from "@/components/home/card-culture"
 import { cultureCategorie } from "@/data/data"
 
 
@@ -18,6 +18,7 @@ export const Culture = () => {
                                 icon={categorie.icon}
                                 key={index}
                                 buttonLabel="Explorer"
+                                buttonUrl={categorie.buttonUrl}
                                 name={categorie.name}
                                 color={categorie.color}
                                 description={categorie.description}
