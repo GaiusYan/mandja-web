@@ -17,7 +17,10 @@ import {
 
 
 const poppins = Poppins({
-    weight:"100",
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
 })
 
 export const CardHeadline = ({
