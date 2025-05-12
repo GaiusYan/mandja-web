@@ -1,4 +1,4 @@
-import HomePage from "@/app/(protected)/page";
+import HomePage from "@/app/home/page";
 
 export default function Home() {
   return (

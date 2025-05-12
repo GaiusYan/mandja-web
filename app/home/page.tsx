@@ -2,7 +2,7 @@ import { Communauty } from "@/components/home/communauty";
 import { Culture } from "@/components/home/culture";
 import { HeadLine } from "@/components/home/headline";
 import { MainCarousel } from "@/components/home/main-carousel";
-import Navbar from "../mandja-web/_components/navbar";
+import Navbar from "@/app/mandja-web/_components/navbar";
 
 
 const HomePage = () => {
