@@ -1,12 +1,12 @@
 
 "use client";
 
-import {  Roboto } from 'next/font/google';
+import {  Inter, Roboto } from 'next/font/google';
 import { useState } from 'react';
 import {NavAvatar} from '@/components/home/nav-avatar';
 import { Button } from '@/components/ui/button';
 
-import { LogInIcon } from 'lucide-react';
+import { LogIn } from 'lucide-react';
 import { NavNavigationMenu } from '@/components/home/nav-navigation-menu';
 
 const roboto = Roboto({
@@ -14,18 +14,26 @@ const roboto = Roboto({
   weight: ['400', '700'],
   variable: '--font-roboto',
   display: 'swap',
-}); 
+});
+
+const inter = Inter({
+   subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 
 
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 
 
  
 const  Navbar = () => {
   
-  const [isConnected, setIsConnected] = useState<boolean>(true);
+  const [isConnected, setIsConnected] = useState<boolean>(false);
   
   const onClick = () : void => {
     if (true){
@@ -55,10 +63,12 @@ const  Navbar = () => {
                 onClick={onClick}
                 variant={"default"}
                 value={"Se connecter"}>
-                  <LogInIcon 
-                    className="h-4 w-4 mr-2" />
-                    Se connecter
-                </Button>
+                  <Link href={"/auth"} className='flex flex-row items-center'>
+                    <LogIn 
+                      className="h-4 w-4 mr-2" />
+                      <span className={cn(inter)}>Connexion</span>
+                  </Link>
+              </Button>
             }
           </div>
         </div>
