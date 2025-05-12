@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/app/mandja-web/_components/navbar";
 
 
 export const metadata: Metadata = {
@@ -21,10 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body
       >
-        <Navbar />
-        <main className="pt-19">
+        <div>
           {children}
-        </main>
+        </div>
       </body>
     </html>
   );

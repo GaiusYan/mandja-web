@@ -103,3 +103,42 @@ export const headlineData : headlineProps[] = [
     description: "Chaque culture a ses propres traditions et coutumes. Découvrez les rituels, les fêtes et les croyances qui font la richesse de notre diversité culturelle.",
   }
 ]
+
+
+/* 
+  Contribution number
+*/
+
+
+
+export interface CardMemberProps{
+    author: string,
+    authorAvatar?: string,
+    profession: string,
+    contributionNumber: string
+}
+
+export const memberContributionData: CardMemberProps[] = [
+  {
+    author: "Gaïus Ocklefort Yan-bena",
+    authorAvatar: "https://lh3.googleusercontent.com/a/ACg8ocKFMGo0UBHhsgOl25zQzPOsqygDrNhGQtW3yqzmoGwU0sJxSDSR=s288-c-no",
+    contributionNumber: "253 contributions",
+    profession:"Dévéloppeur web"
+  },
+  {
+    author: "Micheline sonia",
+    contributionNumber: "14 contributions",
+    profession:"Historienne centrafricaine"
+  },
+  {
+    author: "Jean Marvel",
+    authorAvatar: "https://th.bing.com/th/id/R.d22dff664d866b32d8b9d046e3359390?rik=Ce8KWuYyZne33w&pid=ImgRaw&r=0",
+    contributionNumber: "2 contributions",
+    profession:"Historien chercheur"
+  },
+  {
+    author: "Hubert Sonafio",
+    contributionNumber: "28 contributions",
+    profession:"Anthropologue africain"
+  },
+]
