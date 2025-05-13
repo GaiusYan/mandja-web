@@ -9,4 +9,6 @@ export const Login = async (values : z.infer<typeof LoginSchema>) => {
             error: "Champs obligatoires",
         }
     }
+
+    return {success: "Connexion effectuée"}
 }

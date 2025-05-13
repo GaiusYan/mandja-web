@@ -17,7 +17,7 @@ import { Button } from '@/components/ui/button';
 
 interface CardAuthProps {
     children: React.ReactNode,
-    showSocial: boolean,
+    showSocial?: boolean,
     headerTitle:string,
     headerLabel: string
 }
