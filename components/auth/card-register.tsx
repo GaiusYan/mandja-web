@@ -40,7 +40,12 @@ function CardRegister() {
         setSuccess("");
 
         startTransition(() => {
+
+            console.log("Register user");
+            
+            
             Register(values).then((data) => { 
+                console.log("Register user");
                 if (data?.success){
                     setSuccess(data?.success);
                     return;
