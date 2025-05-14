@@ -1,5 +1,11 @@
+"use server";
+import { signIn } from "@/auth";
 import { LoginSchema } from "@/schemas";
 import * as z from "zod";
+import {
+    DEFAULT_LOGIN_REDIRECT
+} from '@/routes'
+import { AuthError } from "next-auth";
 
 export const Login = async (values : z.infer<typeof LoginSchema>) => {
     const validatedFields = LoginSchema.safeParse(values);
@@ -10,5 +16,30 @@ export const Login = async (values : z.infer<typeof LoginSchema>) => {
         }
     }
 
-    return {success: "Connexion effectuée"}
+    const {email, password} = validatedFields.data;
+
+    try { 
+        await signIn("credentials",
+            {
+                email,
+                password,
+                redirectTo: DEFAULT_LOGIN_REDIRECT
+            });
+    } catch (error) {
+        console.log(error);
+        
+        if (error instanceof AuthError){
+            switch (error.type){
+                case "CredentialsSignin":
+                    return {
+                        error : "Utilisateur invalide"
+                    }
+                default: 
+                    return {
+                        error : "Erreur survenue..."
+                    }
+            }
+        }
+        return {success : "Connexion effectuée!"}
+    }
 }

@@ -35,6 +35,9 @@ function CardLogin() {
 
 
     const onSubmit = (values : z.infer<typeof LoginSchema>) => {
+        setError("");
+        setSuccess("");
+       
         startTransition(() => {
             Login(values).then((data) => {
                 

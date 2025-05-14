@@ -41,11 +41,11 @@ function CardRegister() {
 
         startTransition(() => {
 
-            console.log("Register user");
+            
             
             
             Register(values).then((data) => { 
-                console.log("Register user");
+                
                 if (data?.success){
                     setSuccess(data?.success);
                     return;
@@ -139,13 +139,15 @@ function CardRegister() {
                 </div>
                 
                 </div>
-                <FormSuccess message={success as string}/>
-                <FormError message={error as string}/>
-                <Button
-                    type='submit' 
-                    className='mt-5 w-full hover:shadow-sm cursor-pointer'>
-                    {"S'inscrire"}
-                </Button>
+                <div className='mt-2'>
+                    <FormSuccess message={success as string}/>
+                    <FormError message={error as string}/>
+                    <Button
+                        type='submit' 
+                        className='mt-5 w-full hover:shadow-sm cursor-pointer'>
+                        {"S'inscrire"}
+                    </Button>
+                </div>
                 <CardFooter className='text-xs mt-3'>{"J'ai déjà un compte ?"}
                 <span>
                     <Link 

@@ -1,12 +1,5 @@
-
 "use client";
-
-import {  Inter, Roboto } from 'next/font/google';
-import { useState } from 'react';
-import {NavAvatar} from '@/components/home/nav-avatar';
-import { Button } from '@/components/ui/button';
-
-import { LogIn } from 'lucide-react';
+import { Roboto } from 'next/font/google';
 import { NavNavigationMenu } from '@/components/home/nav-navigation-menu';
 
 const roboto = Roboto({
@@ -16,31 +9,14 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-const inter = Inter({
-   subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-
-
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-
+import { UserLogin } from '@/components/auth/user-login';
 
 
  
-const  Navbar = () => {
-  
-  const [isConnected, setIsConnected] = useState<boolean>(false);
-  
-  const onClick = () : void => {
-    if (true){
-      setIsConnected(false);
-    }
-    setIsConnected(true)
-  }
+const  Navbar =  () => {
+
   return (
     <div className="p-5
       flex
@@ -57,24 +33,7 @@ const  Navbar = () => {
         </div>
         <div className='flex flex-row items-center'>
           <NavNavigationMenu/>
-          <div>
-            {
-              isConnected ? 
-              <NavAvatar 
-                src={""}
-                alt={"GY"} onClick={onClick}/> : 
-              <Button 
-                onClick={onClick}
-                variant={"default"}
-                value={"Se connecter"}>
-                  <Link href={"/auth"} className='flex flex-row items-center'>
-                    <LogIn 
-                      className="h-4 w-4 mr-2" />
-                      <span className={cn(inter)}>Connexion</span>
-                  </Link>
-              </Button>
-            }
-          </div>
+          <UserLogin/>
         </div>
     </div>
   )
