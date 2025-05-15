@@ -14,24 +14,22 @@ const inter = Inter({
   display: 'swap',
 })
 
-
-
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { useState } from 'react';
+import {getInitials} from "@/utils/utils";
 
-export const UserLogin =  () => {
+export const UserLogin =  async () => {
 
     
-    const [isConnected,connected] = useState(false);
-  
+    const user = await auth();
+
+    console.log(user);
     return (
          <div>
             {
-              isConnected ? 
-              <NavAvatar 
-                src={ ""}
-                alt={"YB"}/> : 
+              user ? <NavAvatar 
+                src={user.user?.image as string}
+                alt={getInitials(user?.user?.name as string) as string}/>  :
               <Button 
                 variant={"default"}
                 value={"Se connecter"}>

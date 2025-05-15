@@ -22,7 +22,7 @@ export default
 
                     const passwordMatch = await compare(password,user.password);
 
-                    //console.log({passwordMatch});
+                    console.log({passwordMatch});
                     
                     if (passwordMatch) return user;
                 }

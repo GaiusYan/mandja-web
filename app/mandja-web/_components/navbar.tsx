@@ -1,4 +1,3 @@
-"use client";
 import { Roboto } from 'next/font/google';
 import { NavNavigationMenu } from '@/components/home/nav-navigation-menu';
 

@@ -16,10 +16,14 @@ import { useForm } from 'react-hook-form';
 import { Login } from '@/actions/login';
 import { FormError } from '@/components/toast/FormError';
 import { FormSuccess } from '../toast/FormSucess';
-
+import { useRouter } from 'next/navigation';
+import {
+    DEFAULT_LOGIN_REDIRECT
+} from '@/routes';
 
 function CardLogin() {
 
+    const router = useRouter();
     const [isPending,startTransition] = useTransition();
     const [error, setError] = useState<string >();
     const [success, setSuccess] = useState<string>();
@@ -42,8 +46,8 @@ function CardLogin() {
             Login(values).then((data) => {
                 
                 if (data?.success){
-                    setSuccess(data?.success);
-                    return;
+                    //setSuccess(data?.success);   
+                    router.push(DEFAULT_LOGIN_REDIRECT);
                 }
 
                 if (data?.error){

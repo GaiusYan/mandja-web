@@ -1,63 +1,42 @@
 import NextAuth from "next-auth";
-import Google from "next-auth/providers/google";
-import authConfig  from "@/auth.config";
-import {
-  PrismaAdapter
-} from "@auth/prisma-adapter"
-
-import {
-  prisma
-} from "@/lib/db"
 import Credentials from "next-auth/providers/credentials";
-import { getUserByEmail, getUserById } from "./data/user";
+import Google from "next-auth/providers/google";
 import { LoginSchema } from "./schemas";
+import { getUserByEmail } from "./data/user";
 import { compare } from "bcryptjs";
-export const { handlers,
-    signIn, signOut, auth 
-} = NextAuth({
-  ...authConfig,
-  adapter: PrismaAdapter(prisma),
-  session : {
-    strategy: "jwt"
-  },
+ 
+export const { 
+  auth,
+  handlers,
+  signIn,
+  signOut } = NextAuth({
   providers: [
-    Google, Credentials(
-        {
-        async authorize(credentials) {
-            
-            const validatedFields = LoginSchema.safeParse(credentials);
-        
-            if (validatedFields.success){
-                const {email, password } = validatedFields.data;
-                const user = await getUserByEmail(email);
-                
-                if (!user || !user.password) return null;
-                
-                const passwordMatch = await compare(password,user.password);
-                
-                if(passwordMatch) return user;
-            }
+    Google,
+    Credentials({
+      credentials: {
+        email: {label : "email" },
+        password : {label : "password"},
+      },
+      async authorize(credentias){
 
-            return null;
+        const validatedFields = LoginSchema.safeParse(credentias);
+
+        if (validatedFields.success) {
+
+          const {email, password} = validatedFields.data;
+
+          const user = await getUserByEmail(email);
+
+          if (!user || !user.password) return null;
+
+          const passwordMatch = await compare(password, user.password);
+          if (passwordMatch) return user;
         }
-    })],
-  pages: {
-    signIn: "/auth",
-  },
-  callbacks : {
-    async signIn({user, account}) {
-
-      if (account?.provider !== "credentials") return true;
-      
-      if (!user.id) {
-        throw new Error("L'identifiant de l'utilisateur n'existe pas");
+        return null;
       }
-
-      const existingUser =  await getUserById(user.id);
-      
-      if (existingUser) return true;
-      
-      return true;
-    }
+    })
+  ],
+  session: {
+    strategy: "jwt"
   }
-});
+})

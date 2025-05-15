@@ -2,9 +2,7 @@
 import { signIn } from "@/auth";
 import { LoginSchema } from "@/schemas";
 import * as z from "zod";
-import {
-    DEFAULT_LOGIN_REDIRECT
-} from '@/routes'
+
 import { AuthError } from "next-auth";
 
 export const Login = async (values : z.infer<typeof LoginSchema>) => {
@@ -15,7 +13,6 @@ export const Login = async (values : z.infer<typeof LoginSchema>) => {
             error: "Champs obligatoires",
         }
     }
-
     const {email, password} = validatedFields.data;
 
     try { 
@@ -23,11 +20,12 @@ export const Login = async (values : z.infer<typeof LoginSchema>) => {
             {
                 email,
                 password,
-                redirectTo: DEFAULT_LOGIN_REDIRECT
+                redirect:false
             });
+        return {success: "Authentification vérifiée..."};        
     } catch (error) {
         console.log(error);
-        
+    
         if (error instanceof AuthError){
             switch (error.type){
                 case "CredentialsSignin":
@@ -40,6 +38,6 @@ export const Login = async (values : z.infer<typeof LoginSchema>) => {
                     }
             }
         }
-        return {success : "Connexion effectuée!"}
+        return { error : "Une erreur survenue..."}
     }
 }

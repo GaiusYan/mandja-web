@@ -1,3 +1,6 @@
+"use client";
+import 
+{ Logout } from "@/actions/logout";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -14,6 +17,9 @@ interface NavDropdownProps {
     children: React.ReactNode;
 }
 export const NavDropdown = ({children} : NavDropdownProps) => {
+    
+    
+    
     return (
         <DropdownMenu>
             <DropdownMenuTrigger>
@@ -33,7 +39,7 @@ export const NavDropdown = ({children} : NavDropdownProps) => {
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                    <DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => Logout()}>
                         <LogOut/>
                         Déconnexion
                     </DropdownMenuItem>
