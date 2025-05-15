@@ -8,7 +8,7 @@ import { LogIn } from 'lucide-react';
 
 
 const inter = Inter({
-   subsets: ['latin'],
+  subsets: ['latin'],
   weight: ['400', '700'],
   variable: '--font-inter',
   display: 'swap',

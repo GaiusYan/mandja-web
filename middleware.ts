@@ -16,11 +16,11 @@ export default auth(async function auth(req) : Promise<Response | undefined> {
   const isLoggedIn = !!req.auth;
   const isAuthRoute = authRootes.includes(nextUrl.pathname);
 
-  /* if (isLoggedIn && isAuthRoute){
+  if (isLoggedIn && isAuthRoute){
     return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT,nextUrl));
-  } */
+  } 
 
-    return undefined;
+  return undefined;
 
 });
 
