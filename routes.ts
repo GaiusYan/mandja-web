@@ -1,5 +1,6 @@
 export const publicRoutes = [
     "/",
+    "/auth/error",
 ];
 
 export const authRootes = [

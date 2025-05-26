@@ -42,7 +42,7 @@ export const CardAuth = ({
       });
     };
     return (
-        <div className='flex justify-center items-center min-h-screen'>
+      <div className='flex justify-center items-center min-h-screen'>
       <Card className='w-[350px] shadow-lg'>
         <CardHeader className='flex flex-col justify-center items-center mt-5'>
           <CardTitle className='text-[#7E69AB]'>{headerTitle}</CardTitle>
