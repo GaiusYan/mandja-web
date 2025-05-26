@@ -24,6 +24,10 @@ export const {
 
         const validatedFields = LoginSchema.safeParse(credentias);
 
+        console.log({validatedFields});
+        
+
+
         if (validatedFields.success) {
 
           const {email, password} = validatedFields.data;
