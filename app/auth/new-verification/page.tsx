@@ -1,8 +1,13 @@
 import { CardNewVerification } from "@/components/auth/card-new-verification";
-
+import {
+ Suspense,
+} from "react";
+import { BeatLoader } from "react-spinners";
 const NewVerificationPage = () => {
     return(
-        <CardNewVerification/>
+        <Suspense fallback={<BeatLoader/>}>
+            <CardNewVerification/>
+        </Suspense>
     )
 } 
 

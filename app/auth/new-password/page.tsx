@@ -1,9 +1,14 @@
 import CardNewPassword from "@/components/auth/card-new-password";
-
+import { Suspense } from 'react';
+import {
+BeatLoader
+} from "react-spinners";
 
 const NewPasswordPage = () => {
     return (
-        <CardNewPassword/>
+        <Suspense fallback={<BeatLoader/>}>
+            <CardNewPassword/>
+        </Suspense>
     )
 }
 
