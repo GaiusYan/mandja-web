@@ -27,7 +27,6 @@ export const {
     }
   },
   callbacks:{
-
     async session({token, session}){
       console.log({sessionToken: token,session});
 
@@ -47,16 +46,20 @@ export const {
       if(!token) return token;
       
       const existingUser = await getUserById(token.sub!);
-
+      console.log({existingUser});
+      
       token.role = existingUser?.role;
       return token;
     },
 
-    async signIn({ user }) {
+    async signIn({ user, account }) {
+
+      if (account?.provider !== "credentials") return true;
       
       const existingUser = await getUserById(user.id!);
+      if (!existingUser?.emailVerified) return false;
 
-      if (!existingUser || !existingUser.emailVerified) return false;
+      //todo : add 2fa check here
       return true;
     }
   },

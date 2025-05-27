@@ -4,6 +4,8 @@ import * as z from "zod";
 import {hash} from "bcryptjs";
 import { prisma } from "@/lib/db";
 import { getUserByEmail } from "@/data/user";
+import { generateVerificationToken } from "@/lib/token";
+import { sendVerificationEmail } from "@/lib/mail";
 
 
 
@@ -32,7 +34,14 @@ export const Register = async (values : z.infer<typeof RegisterSchema>) => {
             email,
             password : hashedPassword
         }
-    })
+    });
+
+
+    const verificationToken =  await generateVerificationToken(email);
+    await sendVerificationEmail(
+        verificationToken.email,
+        verificationToken.token
+    );
 
     /* TODO : send verification token email */
     return {success: "Inscription effectuée!"}
