@@ -4,8 +4,6 @@ import NextAuth from "next-auth";
 import {
   DEFAULT_LOGIN_REDIRECT, 
   authRootes,
-  publicRoutes
-
 } from "@/routes";
 
 const { auth } = NextAuth(authConfig)
