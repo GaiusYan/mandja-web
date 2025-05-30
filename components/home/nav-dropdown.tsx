@@ -11,6 +11,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { LogOut, Settings, User } from "lucide-react";
+import Link from "next/link";
 
 
 interface NavDropdownProps {
@@ -29,9 +30,12 @@ export const NavDropdown = ({children} : NavDropdownProps) => {
                 <DropdownMenuLabel>Compte</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                    <DropdownMenuItem>
-                        <User/>Profile
-                    </DropdownMenuItem>
+                        <Link href={"/auth/profile"} className="flex flex-row gap-2">
+                            <DropdownMenuItem className="w-full">
+                                <User/>
+                                Profile
+                            </DropdownMenuItem>
+                        </Link>
                     <DropdownMenuItem>
                         <Settings/>
                         Paramètres

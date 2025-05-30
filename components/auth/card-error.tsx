@@ -6,6 +6,7 @@ import {
   CardTitle
 } from "@/components/ui/card";
 import { Button } from "../ui/button";
+import Link from "next/link";
 export const CardError = () => {
     return (
         <div className='flex justify-center items-center min-h-screen'>
@@ -17,7 +18,9 @@ export const CardError = () => {
                 </CardHeader>
                 <CardContent className='flex justify-center items-center'>
                     <Button>
-                        {"Retour à l'acceuil"}
+                        <Link href={"/"}>
+                            {"Retour à l'acceuil"}
+                        </Link>
                     </Button>
                 </CardContent>
             </Card>

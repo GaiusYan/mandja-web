@@ -30,7 +30,7 @@ export const UserLogin =  async () => {
               user ? <NavAvatar 
                 src={user.user?.image as string}
                 alt={getInitials(user?.user?.name as string) as string}/>  :
-              <Button 
+              <Button
                 variant={"default"}
                 value={"Se connecter"}>
                   <Link href={"/auth"} className='flex flex-row items-center'>

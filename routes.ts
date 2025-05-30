@@ -19,6 +19,6 @@ export const DEFAULT_LOGIN_REDIRECT  = "/";
 
 export const privateRoutes = [
     "/settings",
-    "/"
+    "/auth/profile",
 ]
 
