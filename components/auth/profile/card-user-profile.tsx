@@ -5,12 +5,9 @@ import { Button } from "@/components/ui/button";
 import {
 
     Card,
-    CardAction,
     CardContent,
     CardDescription,
     CardFooter,
-    CardHeader,
-    CardTitle
 } from "@/components/ui/card";
 import { getInitials } from "@/utils/utils";
 import { Separator } from "@radix-ui/react-menubar";
@@ -40,7 +37,18 @@ export const CardUserProfile = async () => {
                     </Button>
                 </CardDescription>
             </CardContent>
-            <Separator className="w-full mb-4"/>
+            <Separator/>
+            <CardFooter>
+                <div className="flex items-center justify-between">
+                    <div className="flex flex-col gap-1 justify-start">
+                        <div className="text-gray-500 font-normal">Nom</div>
+                        <div>Gaïus Ocklefort Yan-bena</div>
+                    </div>
+                    <div className="justify-end">
+                        Modifier le nom
+                    </div>
+                </div>
+            </CardFooter>
         </Card>
     )
 }
