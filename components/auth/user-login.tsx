@@ -28,6 +28,7 @@ export const UserLogin =  async () => {
          <div>
             {
               user ? <NavAvatar 
+                size='h-8 w-8'
                 src={user.user?.image as string}
                 alt={getInitials(user?.user?.name as string) as string}/>  :
               <Button
