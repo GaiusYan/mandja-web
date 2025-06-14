@@ -11,16 +11,17 @@ import { AvatarComponent } from "@/components/home/avatar";
 interface NavAvatarProps {
     src: string;
     alt: string;
+    size : string;
 }
 
 export const NavAvatar = (
-    {src, alt}:
+    {src, alt, size}:
      NavAvatarProps) => {
     return (
 
         <NavDropdown>
             <AvatarComponent 
-                size="h-8 w-8"
+                size={size}
                 src={src} 
                 alt={alt}/>
         </NavDropdown>
