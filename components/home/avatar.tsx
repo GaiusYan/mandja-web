@@ -10,11 +10,12 @@ from "@/components/ui/avatar";
 interface AvatarProps {
     src: string;
     alt?: string;
+    size: string;
 }
 
-export const AvatarComponent = ({ src, alt}: AvatarProps) => {
+export const AvatarComponent = ({ src, alt, size}: AvatarProps) => {
     return (
-        <Avatar className="w-8 h-8" >
+        <Avatar className={size} >
             <AvatarImage 
                 src={src}
                 alt={alt}/>

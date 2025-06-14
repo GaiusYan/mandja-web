@@ -15,6 +15,7 @@ export const AvatarAuth = async () => {
             <TooltipTrigger >
                 <div className="p-2 flex flex-row gap-1 ">
                     <AvatarComponent
+                        size="w-8 h-8"
                         src={currentUser?.user.image as string} 
                         alt={getInitials(currentUser?.user.name as string) as string}/>
                     <div className="flex flex-col text-xs cursor-pointer">
