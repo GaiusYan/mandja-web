@@ -20,6 +20,7 @@ export const NavAvatar = (
 
         <NavDropdown>
             <AvatarComponent 
+                size="h-8 w-8"
                 src={src} 
                 alt={alt}/>
         </NavDropdown>
