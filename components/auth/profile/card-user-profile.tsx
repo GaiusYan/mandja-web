@@ -10,11 +10,12 @@ import {
     CardFooter,
 } from "@/components/ui/card";
 import { getInitials } from "@/utils/utils";
-import { Separator } from "@radix-ui/react-menubar";
+import { Separator } from "@/components/auth/profile/Separator";
+
 export const CardUserProfile = async () => {
      const currentUser = await auth();
     return (
-        <Card className="flex w-full mt-4">
+        <Card className="flex w-full mt-4 shadow-xs">
             <CardContent className="flex sm:flex-row gap-5 w-full flex-col">
                 <AvatarComponent
                     size="lg:w-40 lg:h-40 w-20 h-20"
@@ -39,12 +40,12 @@ export const CardUserProfile = async () => {
             </CardContent>
             <Separator/>
             <CardFooter>
-                <div className="flex items-center justify-between">
-                    <div className="flex flex-col gap-1 justify-start">
-                        <div className="text-gray-500 font-normal">Nom</div>
-                        <div>Gaïus Ocklefort Yan-bena</div>
+                <div className="grid grid-flow-col grid-row-2 gap-4 w-full">
+                    <div className="flex md:flex-row flex-col gap-1 md:gap-7 justify-start">
+                        <div className="text-gray-500 font-normal">Nom complet</div>
+                        <div>{currentUser?.user.name}</div>
                     </div>
-                    <div className="justify-end">
+                    <div className="flex justify-end items-end text-blue-400 font-normal">
                         Modifier le nom
                     </div>
                 </div>
