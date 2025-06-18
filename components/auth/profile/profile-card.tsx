@@ -1,12 +1,8 @@
 "use client";
 import {  CardFooter} from "@/components/ui/card";
 import { CardContentUserProfile } from "./card-content-user-profile";
-/* interface ProfileCardProps {
-    title: string,
-    updateInformationLabel : string,
 
-}
- */
+
 
 export const ProfileCard = () => {
     return (
