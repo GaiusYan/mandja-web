@@ -3,6 +3,7 @@ import {
 } from "@/components/auth/profile/information-title";  
 import { CardUserProfile } from "./card-user-profile";
 import { UserDetails } from "./user-details";
+import { AccountInfo } from "./account-info";
  
 export const Profile = () => {
     return (
@@ -10,6 +11,7 @@ export const Profile = () => {
             <InformationTitle/>
             <CardUserProfile/>
             <UserDetails/>
+            <AccountInfo/>
         </div>
     );
 } 

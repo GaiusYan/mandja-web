@@ -22,8 +22,6 @@ export const UserLogin =  async () => {
 
     
     const user = await auth();
-
-    console.log(user);
     return (
          <div>
             {

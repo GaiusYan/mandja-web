@@ -16,13 +16,13 @@ import { AvatarAuth }
 // Menu items.
 const items = [
   {
-    title: "Home",
-    url: "#",
+    title: "Vos informations",
+    url: "/auth/profile",
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
+    title: "Publications",
+    url: "/auth/publications",
     icon: Inbox,
   },
   {
@@ -36,7 +36,7 @@ const items = [
     icon: Search,
   },
   {
-    title: "Settings",
+    title: "Paramètres",
     url: "#",
     icon: Settings,
   },

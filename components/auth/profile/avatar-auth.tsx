@@ -36,7 +36,7 @@ export const AvatarAuth = async () => {
                 </div>
             </TooltipTrigger>
             <TooltipContent>
-                <p>Gaïus Ocklefort Yan-bena</p>
+                <p>{currentUser?.user.name}</p>
             </TooltipContent>
         </Tooltip>
     );

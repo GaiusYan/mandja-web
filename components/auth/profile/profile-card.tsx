@@ -9,7 +9,7 @@ export const ProfileCard = () => {
         <CardContentUserProfile
             handleActionButton={() => alert("Hello world")} 
             cardTittleLabel="Informations du profil"
-            cardActionLabel="Modifier les informations de compte">
+            cardActionLabel="Modifier les informations du profil">
                 <div>
                     <div
                         className={"md:grid-cols-3 grid grid-rows-1 border-b-0 border-t p-4 hover:bg-gray-100 hover:cursor-pointer"}>
